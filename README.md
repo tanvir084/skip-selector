@@ -2,34 +2,47 @@
 
 A clean, responsive React app to browse and select skip sizes—with light/dark theming, CSS-variable design tokens, and dynamic data from the WeWantWaste API.
 
----
+## 🗂️ Contents Overview
 
-## 📋 Table of Contents
+- 🎬 **Demo**  
+  A quick tour showcasing the app in action.
 
-- [Demo](#demo)  
-- [Features](#features)  
-- [Tech Stack](#tech-stack)  
-- [Prerequisites](#prerequisites)  
-- [Getting Started](#getting-started)  
-  - [Installation](#installation)  
-  - [Running Locally](#running-locally)  
-  - [Building for Production](#building-for-production)  
-- [Configuration](#configuration)  
-- [Project Structure](#project-structure)  
-- [Theming](#theming)  
-- [API Usage](#api-usage)  
-- [Contributing](#contributing)  
-- [License](#license)  
-- [Contact](#contact)  
+- ✨ **Features**  
+  Key highlights and benefits you’ll find in this project.
 
----
+- 🛠️ **Tech Stack**  
+  The core libraries, frameworks, and tools powering the app.
+
+- 🔧 **Prerequisites**  
+  Software and environment requirements to get started.
+
+- 🚀 **Getting Started**  
+  Step-by-step instructions to install, run, and build the project.  
+  - 📝 **Installation**: How to clone the repo and install dependencies  
+  - ▶️ **Running Locally**: Starting the development server  
+  - 📦 **Building for Production**: Generating optimized assets
+
+- ⚙️ **Configuration**  
+  Details on environment variables, feature toggles, and customization.
+
+- 📂 **Project Structure**  
+  Overview of the folder layout and key source files.
+
+- 🎨 **Theming**  
+  How the light/dark mode toggle works and where to adjust design tokens.
+
+- 🌐 **API Usage**  
+  Endpoints, request patterns, and data models consumed by the app.
+
+- 🤝 **Contributing**  
+  Guidelines for submitting issues, branches, and pull requests.
+
+- 📄 **License**  
+  Licensing terms and attribution details.
 
 ## 🎬 Demo
-
-> **Live demo coming soon**  
+> Live demo: [https://skip-selector-two.vercel.app/](https://skip-selector-two.vercel.app/)    
 > Or run locally (see below) to explore light/dark mode, card selection, and dynamic API data.
-
----
 
 ## ✨ Features
 
@@ -125,12 +138,12 @@ skip-selector-challenge/
 │   ├── hooks/
 │   │   └── useFetch.js
 │   ├── styles/
-│   │   ├── index.css       # global theme + typography
 │   │   ├── Header.css
 │   │   ├── SkipSelectPage.css
 │   │   └── SkipOptionCard.css
-│   ├── theme.js            # (optional) inline-style token object
+│   ├── App.css      
 │   ├── App.js
+│   ├── index.css         # global theme + typography
 │   └── index.js
 └── package.json
 ```
