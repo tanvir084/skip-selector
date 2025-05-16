@@ -1,0 +1,42 @@
+/* src/styles/Header.css */
+.app-header {
+  background: var(--color-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.page-title {
+  margin-right: 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+}
+.theme-toggle:hover {
+  opacity: 0.8;
+}

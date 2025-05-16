@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import SkipSelectPage from "./components/SkipSelectPage";
+import Footer from "./components/Footer";
+import "./index.css";
 
-function App() {
+export default function App() {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  // Whenever theme changes, update HTML attribute & persist
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header theme={theme} toggleTheme={toggleTheme} />
+      <main>
+        <SkipSelectPage />
+      </main>
+      <Footer />
+    </>
   );
 }
-
-export default App;

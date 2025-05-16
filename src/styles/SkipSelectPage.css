@@ -1,0 +1,33 @@
+/* Page wrapper */
+.skip-select-page {
+  padding: 2rem 1rem;
+  background: var(--color-background);
+  text-align: center;
+}
+
+/* Title + subtitle */
+.skip-select-page h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  color: var(--color-secondary);
+}
+.skip-select-page .subtitle {
+  margin-bottom: 2rem;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+/* Responsive grid */
+.skip-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .skip-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .skip-grid { grid-template-columns: repeat(3, 1fr); }
+}

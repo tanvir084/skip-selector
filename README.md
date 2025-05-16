@@ -1,70 +1,183 @@
-# Getting Started with Create React App
+# 🗑️ Skip Selector Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean, responsive React app to browse and select skip sizes—with light/dark theming, CSS-variable design tokens, and dynamic data from the WeWantWaste API.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Table of Contents
 
-### `npm start`
+- [Demo](#demo)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Prerequisites](#prerequisites)  
+- [Getting Started](#getting-started)  
+  - [Installation](#installation)  
+  - [Running Locally](#running-locally)  
+  - [Building for Production](#building-for-production)  
+- [Configuration](#configuration)  
+- [Project Structure](#project-structure)  
+- [Theming](#theming)  
+- [API Usage](#api-usage)  
+- [Contributing](#contributing)  
+- [License](#license)  
+- [Contact](#contact)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎬 Demo
 
-### `npm test`
+> **Live demo coming soon**  
+> Or run locally (see below) to explore light/dark mode, card selection, and dynamic API data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✨ Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ✅ **Responsive grid**: 1↔2↔3 columns on mobile/tablet/desktop  
+- 🎨 **Light & Dark themes** with 🌙/☀️ toggle  
+- 🏷️ **Design tokens** via CSS variables for colors, spacing, typography  
+- 🔄 **Dynamic data** from the skips-by-location endpoint  
+- 📐 **Fixed-aspect skip cards**, consistent image sizing  
+- ⚠️ **Conditional warning banner** (“Not Allowed On The Road”)  
+- ✔️ **Keyboard & ARIA** accessibility for card selection  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Tech Stack
 
-### `npm run eject`
+- **React** (Create React App)  
+- **Axios** for HTTP requests  
+- **CSS Variables** for theming & tokens  
+- **Flexbox & CSS Grid** for layout  
+- **Google Fonts**: Inter (body) + Montserrat (headings)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔧 Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Node.js](https://nodejs.org/) ≥ v14  
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/your-username/skip-selector-challenge.git
+cd skip-selector-challenge
 
-### Code Splitting
+# with npm
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# or with yarn
+yarn install
+```
 
-### Analyzing the Bundle Size
+### Running Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+# or
+yarn start
+```
 
-### Making a Progressive Web App
+Open [http://localhost:3000](http://localhost:3000) in your browser. The app will reload on code changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Building for Production
 
-### Advanced Configuration
+```bash
+npm run build
+# or
+yarn build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Optimized output goes into the `build/` folder, ready for deployment.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ⚙️ Configuration
 
-### `npm run build` fails to minify
+You can override the default postcode and area by creating a `.env` file at project root:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```env
+REACT_APP_POSTCODE=NR32
+REACT_APP_AREA=Lowestoft
+```
+
+The app will read these variables at runtime. If unset, it falls back to `NR32` / `Lowestoft`.
+
+---
+
+## 📂 Project Structure
+
+```
+skip-selector-challenge/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── SkipSelectPage.jsx
+│   │   ├── SkipOptionCard.jsx
+│   │   └── Footer.jsx
+│   ├── hooks/
+│   │   └── useFetch.js
+│   ├── styles/
+│   │   ├── index.css       # global theme + typography
+│   │   ├── Header.css
+│   │   ├── SkipSelectPage.css
+│   │   └── SkipOptionCard.css
+│   ├── theme.js            # (optional) inline-style token object
+│   ├── App.js
+│   └── index.js
+└── package.json
+```
+
+---
+
+## 🎨 Theming
+
+All colors, fonts, spacing, and shadows are defined as CSS variables under  
+`:root[data-theme='light']` and `:root[data-theme='dark']` in `src/styles/index.css`.  
+To tweak the look:
+
+1. Edit the `--color-…` tokens.  
+2. Adjust `--font-…` or `--radius-…` values.  
+3. Save & reload — no rebuild needed.
+
+---
+
+## 📡 API Usage
+
+Data is fetched from:
+
+```
+https://app.wewantwaste.co.uk/api/skips/by-location?postcode=${POSTCODE}&area=${AREA}
+```
+
+where `POSTCODE`/`AREA` come from your `.env` or defaults in `SkipSelectPage.jsx`.  
+If an image URL fails, cards fall back to a placeholder.
+
+---
+
+## 🤝 Contributing
+
+1. Fork this repo  
+2. Create a feature branch: `git checkout -b feature/YourFeature`  
+3. Commit your changes: `git commit -m "Add awesome feature"`  
+4. Push to your branch: `git push origin feature/YourFeature`  
+5. Open a Pull Request  
+
+Please follow the existing code style and write clear commit messages.
+
+---
+
+## 📄 License
+
+This project is MIT-licensed. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Happy coding! 🚀
